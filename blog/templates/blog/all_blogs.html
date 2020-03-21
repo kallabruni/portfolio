@@ -3,7 +3,7 @@
 
 {% for blog_post in blog_posts %}
 
-<h2>{{ blog_post.title }}</h2>
+<a href="{% url 'blog:detail' blog_post.id %}"><h2>{{ blog_post.title }}</h2></a>
 <p>{{ blog_post.date }}</p>
 <p>{{ blog_post.description }}</p>
 
