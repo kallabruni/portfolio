@@ -1,10 +1,11 @@
 <h1>Moj blog</h1>
 
+<h2>I write {{ blog_posts.count }} blog{{ blog_posts.count|pluralize }}</h2>
 
 {% for blog_post in blog_posts %}
 
 <a href="{% url 'blog:detail' blog_post.id %}"><h2>{{ blog_post.title }}</h2></a>
-<p>{{ blog_post.date }}</p>
+<p>{{ blog_post.date|date:'h:i d.m.Y' }}</p>
 <p>{{ blog_post.description }}</p>
 
 {% endfor %}
